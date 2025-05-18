@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Test</title></head>
+<body>
+<h2>Mock Test</h2>
+<form method="POST" action="/submit">
+  {% for q in questions %}
+    <p><b>Q{{ loop.index }}:</b> {{ q.question }}</p>
+    {% for opt in q.options %}
+      <input type="radio" name="q{{ loop.index }}" value="{{ opt }}"> {{ opt }}<br>
+    {% endfor %}
+    <br>
+  {% endfor %}
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>
